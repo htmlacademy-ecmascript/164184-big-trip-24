@@ -1,7 +1,7 @@
 # Проект «Большое путешествие»
 
 * Студент: [Олег Алёхин](https://up.htmlacademy.ru/ecmascript/24/user/164184).
-* Наставник: `Неизвестно`.
+* Наставник: [Юлия Волкова](https://htmlacademy.ru/profile/julie_volkova).
 
 ---
 
