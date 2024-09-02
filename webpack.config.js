@@ -1,20 +1,46 @@
 const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const HtmlPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/main.js', // точка входа
+  entry: './src/main.js', // Точка входа
   output: {
-    filename: 'bundle.js', // имя файла сборки
-    path: path.resolve(__dirname, 'build'), // директория для сборки (абсолютный путь)
-    clean: true, // очистка директории перед новой сборкой
+    filename: 'bundle.[contenthash].js', // Имя бандла
+    path: path.resolve(__dirname, 'build'), // Директория для файлов сборки
+    clean: true, // Удаляем предыдущую сборку перед созданием новой
   },
-  devtool: 'source-map', // генерация source-maps
-  plugins: [
-    new CopyWebpackPlugin({
+  devtool: 'source-map', // Генерируем карту исходного кода
+  plugins: [ // Подключаем плагины
+    new HtmlPlugin({
+      template: 'public/index.html',
+    }),
+    new CopyPlugin({
       patterns: [
-        { from: 'public', to: 'build' }, // копирование файлов из /public в /build
+        {
+          from: 'public',
+          globOptions: {
+            ignore: ['**/index.html'],
+          },
+        },
       ],
     }),
   ],
-  mode: 'development', // Режим разработки, можно поменять на 'production' для продакшен сборки
+  module: {
+    rules: [ // Добавляем лоадеры
+      {
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          },
+        },
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader']
+      },
+    ],
+  },
 };
