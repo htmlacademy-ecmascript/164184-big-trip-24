@@ -11,12 +11,14 @@ const tripControlsFilters = document.querySelector('.trip-controls__filters');
 const tripEvents = document.querySelector('.trip-events');
 
 
-export default function renderElements() {
-  render(new TripInfo(), tripMain, RenderPosition.AFTERBEGIN);
-  render(new Filter(), tripControlsFilters, RenderPosition.BEFOREEND);
-  render(new Sorting(), tripEvents, RenderPosition.BEFOREEND);
-  render(new EditPoint(), tripEvents, RenderPosition.BEFOREEND);
-  render(new NewPoint(), tripEvents, RenderPosition.BEFOREEND);
-  render(new List(), tripEvents, RenderPosition.BEFOREEND);
+export default class RenderElements{
+  init() {
+    render(new TripInfo(), tripMain, RenderPosition.AFTERBEGIN);
+    render(new Filter(), tripControlsFilters, RenderPosition.BEFOREEND);
+    render(new Sorting(), tripEvents, RenderPosition.BEFOREEND);
+    render(new EditPoint(), tripEvents, RenderPosition.BEFOREEND);
+    render(new NewPoint(), tripEvents, RenderPosition.BEFOREEND);
+    render(new List(), tripEvents, RenderPosition.BEFOREEND);
+  }
 }
 

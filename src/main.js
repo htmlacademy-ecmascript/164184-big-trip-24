@@ -1,3 +1,5 @@
-import renderElements from './presenter/presenter';
+import RenderElements from './presenter/presenter';
 
-renderElements();
+const renderElements = new RenderElements();
+
+renderElements.init();
