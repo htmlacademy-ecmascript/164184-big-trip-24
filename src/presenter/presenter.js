@@ -1,6 +1,6 @@
 import Filter from '../view/filters.js';
 import Sorting from '../view/sorting.js';
-import List from '../view/list-route-points.js';
+import ListRoutePoints from '../view/list-route-points.js';
 import NewPoint from '../view/new-point.js';
 import EditPoint from '../view/edit-point.js';
 import TripInfo from '../view/trip-info.js';
@@ -18,7 +18,7 @@ export default class RenderElements{
     render(new Sorting(), tripEvents, RenderPosition.BEFOREEND);
     render(new EditPoint(), tripEvents, RenderPosition.BEFOREEND);
     render(new NewPoint(), tripEvents, RenderPosition.BEFOREEND);
-    render(new List(), tripEvents, RenderPosition.BEFOREEND);
+    render(new ListRoutePoints(), tripEvents, RenderPosition.BEFOREEND);
   }
 }
 

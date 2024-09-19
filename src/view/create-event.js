@@ -19,20 +19,3 @@ export default function createEventItemsMarkup() {
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
-
-// export default class createEvent {
-//   getTemplate() {
-//     return createEventItemsMarkup();
-//   }
-
-//   getElement() {
-//     if (!this.element) {
-//       this.element = createElement(this.getTemplate());
-//     }
-//     return this.element;
-//   }
-
-//   removeElement() {
-//     this.element = null;
-//   }
-// }

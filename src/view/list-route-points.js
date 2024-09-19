@@ -121,7 +121,7 @@ function createListTemplate() {
           </ul>`;
 }
 
-export default class List {
+export default class ListRoutePoints {
   getTemplate() {
     return createListTemplate();
   }

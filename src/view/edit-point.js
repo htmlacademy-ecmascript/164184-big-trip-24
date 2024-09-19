@@ -66,10 +66,6 @@ function createEditPointTemplate() {
           </form>`;
 }
 
-// const eventTypeWrapper = document.querySelector('.event__type-wrapper');
-
-// render(new createEvent(), eventTypeWrapper, RenderPosition.BEFOREEND);
-
 export default class EditPoint {
   getTemplate() {
     return createEditPointTemplate();
